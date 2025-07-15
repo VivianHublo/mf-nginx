@@ -1,11 +1,16 @@
 FROM node:22.17 AS build
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
 ARG SERVICE_NAME
 WORKDIR /app
 
 COPY . .
 
 RUN pnpm install --force
-RUN pnpm --filter=${SERVICE_NAME} build dev
+RUN pnpm --filter=${SERVICE_NAME} build
 
 FROM nginx:alpine AS production
 ARG SERVICE_NAME

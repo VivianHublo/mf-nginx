@@ -23,7 +23,7 @@ export default defineConfig({
         "remote-hrm": {
           type: "module",
           name: "remote-hrm",
-          entry: "http://localhost:9000/remote-hrm/remoteEntry.js",
+          entry: "http://localhost:9001/remote-hrm/remoteEntry.js",
           entryGlobalName: "remote",
           shareScope: "default",
         },
