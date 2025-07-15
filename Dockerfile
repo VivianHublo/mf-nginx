@@ -16,7 +16,7 @@ FROM nginx:alpine AS production
 ARG SERVICE_NAME
 
 COPY --from=build /app/apps/${SERVICE_NAME}/dist /usr/share/nginx/html/
-COPY --from=build /app/apps/${SERVICE_NAME}/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
