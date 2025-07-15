@@ -1,0 +1,37 @@
+{
+  "name": "mf-s3",
+  "version": "0.1.0",
+  "author": "VivianHublo",
+  "description": "A PoC of Module Federation served with S3 (MinIO)",
+  "packageManager": "pnpm@10.12.3+sha512.467df2c586056165580ad6dfb54ceaad94c5a30f80893ebdec5a44c5aa73c205ae4a5bb9d5ed6bb84ea7c249ece786642bbb49d06a307df218d03da41c317417",
+  "devDependencies": {
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "@vitest/coverage-v8": "^3.0.5",
+    "@vitest/ui": "^3.0.0",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^10.0.0",
+    "jiti": "2.4.2",
+    "jsdom": "~22.1.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "prettier": "^2.6.2",
+    "tslib": "^2.3.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "~4.5.0",
+    "vitest": "^3.0.0",
+    "@module-federation/vite": "^1.5.1"
+  },
+  "scripts": {
+    "install": "pnpm --filter * install",
+    "dev:remote": "pnpm --filter remote-* dev",
+    "build": "pnpm run build:remote & pnpm run build:host",
+    "build:remote": "pnpm --filter remote-* build",
+    "build:host": "pnpm --filter host-admin build",
+    "preview:host": "pnpm --filter host-admin preview"
+  }
+}
