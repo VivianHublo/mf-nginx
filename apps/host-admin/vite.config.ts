@@ -1,10 +1,8 @@
 import { federation } from "@module-federation/vite";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import { name } from "./package.json";
 
 export default defineConfig({
-  base: `/${name}`,
   preview: {
     port: 3000,
   },
@@ -16,14 +14,14 @@ export default defineConfig({
         "remote-shift": {
           type: "module",
           name: "remote-shift",
-          entry: "http://localhost:9000/remote-shift/remoteEntry.js",
+          entry: "http://localhost:9000/remoteEntry.js",
           entryGlobalName: "remote",
           shareScope: "default",
         },
         "remote-hrm": {
           type: "module",
           name: "remote-hrm",
-          entry: "http://localhost:9001/remote-hrm/remoteEntry.js",
+          entry: "http://localhost:9001/remoteEntry.js",
           entryGlobalName: "remote",
           shareScope: "default",
         },
